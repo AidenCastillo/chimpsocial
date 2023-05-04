@@ -1,0 +1,16 @@
+.column {
+    float: left;
+    width: 100%;
+}
+.left, .right {
+    width: 25%;
+}
+.center {
+    width:50%;
+}
+p {
+    color: red;
+}
+body {
+    background-color: black;
+}
