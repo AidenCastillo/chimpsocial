@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./globals.css"
 
 export default function clientLayout({
@@ -14,6 +15,14 @@ export default function clientLayout({
         <div className="column">
           <div className="column left">
             <p>left</p>
+            {/* navigation buttons with iamges*/}
+            <div className="nagivation">
+              <a href="/messages">
+                <button className="navigation-button">
+                  <Image src="../../public/messages.svg" width="50" height="50" alt="asdfad"/>
+                </button>
+              </a>
+            </div>
           </div>
           <div className="column center">
             {children}
