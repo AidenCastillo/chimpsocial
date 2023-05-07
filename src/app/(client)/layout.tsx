@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./globals.css";
 
 import NavigationButton from "./navigationbar.tsx";
+import SideBar from "./sidebar.tsx";
 
 import messagesImage from "../../../public/messages.svg";
 import ChimpLogo from "../../../public/next.svg";
@@ -20,15 +21,16 @@ export default function clientLayout({
       <body>
         <div className="column">
           <div className="column left">
-            <p>left</p>
             {/* navigation buttons with iamges*/}
             <div className="nagivation">
               <NavigationButton version="home" />
             </div>
           </div>
-          <div className="column center">{children}</div>
+          <div className="column center">
+            {children}
+          </div>
           <div className="column right">
-            <p>right</p>
+            <SideBar />
           </div>
         </div>
       </body>

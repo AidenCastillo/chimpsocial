@@ -1,15 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    list-style: none;
+    color: white;
+    font-family: "San Franciso", sans-serif;
+    font-size: 100%;
+    list-style: none;
+}
+
 .column {
     float: left;
     width: 100%;
 }
-.left, .right {
-    width: 25%;
+.left, .right, .center {
+    float:left;
+    width: 33%;
+    height: 100vh;
+    text-align: center;
+}
+.column:after {
+    clear:both;
 }
 .center {
-    width:50%;
+    /* width:50%; */
+    /* height: 100vh; */
+    border: 1px grey;
+    border-style: none solid none solid;
+    
 }
 p {
-    color: red;
+    color: white;
 }
 body {
     background-color: black;
