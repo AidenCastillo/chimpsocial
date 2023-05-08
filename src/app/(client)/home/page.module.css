@@ -1,0 +1,17 @@
+.title {
+	text-align: left;
+}
+
+.categories {
+	float: left;
+  width: 100%;
+}
+.ForYou, .Following {
+	/* background-color:black; */
+  float:left;
+  width: 50%;
+  text-align: center;
+}
+.ForYou:hover, .Following:hover {
+	background-color: grey;
+}
