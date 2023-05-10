@@ -1,4 +1,4 @@
-.tweet {
+.whoop {
 	padding: 10px;
 	/* text-align: left; */
 	border: 1px grey;
@@ -8,34 +8,34 @@
 	height: 100%;
 }
 
-.tweet-Header-Left img {
+.whoop-Header-Left img {
 	/* padding: 5px; */
 	float: left;
 	width: 50px;
 	height: 50px;
 }
 
-.tweet-Header-Left {
+.whoop-Header-Left {
 	height: 50px;
 }
 
-.tweet-Header-Left-Text h3 {
+.whoop-Header-Left-Text h3 {
 	padding: 5px;
 	float:left;
 }
-.tweet-Header-Left-Text p {
+.whoop-Header-Left-Text p {
 	padding: 5px;
 	float:left;
 }
 
-.tweet-Header-Right-Text button{
+.whoop-Header-Right-Text button{
 	width: 30px;
 	height: 30px;
 	float: right;
 	background-color: black;
 	
 }
-.tweet-Header-Right-Text button:hover {
+.whoop-Header-Right-Text button:hover {
 	
 	background-color: #1d9bf0;
 	/* color: deepskyblue; */
@@ -43,7 +43,7 @@
 	border-radius: 50px;
 }
 
-.tweet-Body {
+.whoop-Body {
 	padding-left: 75px;
 	position: relative;
 	text-align: left;

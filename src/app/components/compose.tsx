@@ -44,7 +44,7 @@ export default function Compose() {
 					</button>
         </div>
 				<div className={styles.submit}>
-					<button>Tweet</button>
+					<button>Whoop</button>
 				</div>
       </div>
     </div>

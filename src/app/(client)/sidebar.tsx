@@ -9,7 +9,7 @@ export default function SideBar() {
 		<div className={styles.sidebar}>
 			<div className={styles.search}>
 				<Image src={search} alt="search"/>
-				<input type="text" placeholder="Search Twitter"/>
+				<input type="text" placeholder="Search chimpsocial"/>
 			</div>
 		<div className={styles.whatsHappening}>
 			<h2>What`s happening</h2>

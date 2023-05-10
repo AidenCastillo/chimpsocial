@@ -1,4 +1,4 @@
-import Tweet from "../../components/tweet";
+import Tweet from "../../components/whoop";
 import Compose from "../../components/compose";
 import styles from "./page.module.css";
 import Image from "next/image";

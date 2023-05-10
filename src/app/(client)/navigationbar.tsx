@@ -89,8 +89,8 @@ export default function NavigationButton({ version }: Props) {
               More
             </button>
           </div>
-          <div className={styles.tweetButton}>
-            <button>Tweet</button>
+          <div className={styles.whoopButton}>
+            <button>Whoop</button>
           </div>
         </div>
       </section>
