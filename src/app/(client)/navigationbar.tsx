@@ -1,4 +1,6 @@
-"use client";
+// "use client";
+
+import { useState, useEffect } from "react";
 
 import Image from "next/image";
 import logo from "../../../public/logo.png";
@@ -12,13 +14,18 @@ import bookmarkIcon from "../../../public/bookmark.svg";
 import moreIcon from "../../../public/more-horizontal.svg";
 import styles from "./navigationbar.module.css";
 import Link from "next/link";
-// import { Link } from "react-router-dom";
+
+import {cookies} from "next/headers";
 
 type Props = {
   version: string;
 };
 
 export default function NavigationButton({ version }: Props) {
+  const cookieStore = cookies();
+  const username = cookieStore.get("username");
+
+
 
   return (
     
@@ -59,6 +66,7 @@ export default function NavigationButton({ version }: Props) {
             </button>
             </Link>
           </div>
+              
           <div className={styles.bookmarksButton}>
             <Link href="/bookmarks">
             <button>
@@ -76,12 +84,12 @@ export default function NavigationButton({ version }: Props) {
             </Link>
           </div>
           <div className={styles.profileButton}>
-            <Link href="/profile">
+            <a href={`/${username}`}>
             <button>
               <Image src={profileIcon} alt="Profile" />
               Profile
             </button>
-            </Link>
+            </a>
           </div>
           <div className={styles.moreButton}>
             <button>

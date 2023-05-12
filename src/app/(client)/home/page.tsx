@@ -1,4 +1,4 @@
-import Tweet from "../../components/whoop";
+import Whoop from "../../components/whoop";
 import Compose from "../../components/compose";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -22,8 +22,8 @@ export default function Home() {
         <div className={styles.composing}></div>
       </div>
       <Compose />
-      <Tweet name="Chimp" username="chimpgamer" content="hello world" />
-      <Tweet
+      <Whoop name="Chimp" username="chimpgamer" content="hello world" />
+      <Whoop
         name="Tyler"
         username="bigweenie"
         content="You tried to scare me by getting in my face, then you shoved a pole at me like a little bitch. I asked if you were threatening me because of how pathetic you looked. There's a reason your cameraman panned away"
