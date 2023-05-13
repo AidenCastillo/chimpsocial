@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -15,17 +15,19 @@ import moreIcon from "../../../public/more-horizontal.svg";
 import styles from "./navigationbar.module.css";
 import Link from "next/link";
 
-import {cookies} from "next/headers";
+import { getCookie } from "cookies-next";
 
 type Props = {
   version: string;
 };
 
 export default function NavigationButton({ version }: Props) {
-  const cookieStore = cookies();
-  const username = cookieStore.get("username");
-
-
+  const [username, setUsername] = useState("");
+  
+  useEffect(() => {
+    setUsername(getCookie("username"));
+    console.log(username);
+  }, [setUsername, username]);
 
   return (
     
