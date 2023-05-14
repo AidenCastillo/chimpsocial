@@ -23,86 +23,93 @@ type Props = {
 
 export default function NavigationButton({ version }: Props) {
   const [username, setUsername] = useState("");
-  
+
   useEffect(() => {
-    setUsername(getCookie("username"));
+    const username = getCookie("username");
+    if (username == undefined) {
+      console.log("error");
+      setUsername("");
+      return;
+    } else {
+      // @ts-ignore
+      setUsername(username);
+    }
     console.log(username);
   }, [setUsername, username]);
 
   return (
-    
     <section className={styles.navigation}>
-        <div className={styles["navigation-items"]}>
-          <div className={styles.logo}>
-            <Image src={logo} alt="chimpLogo"></Image>
-          </div>
-          <div className={styles.homeButton}>
-            <Link href="/home">
+      <div className={styles["navigation-items"]}>
+        <div className={styles.logo}>
+          <Image src={logo} alt="chimpLogo"></Image>
+        </div>
+        <div className={styles.homeButton}>
+          <Link href="/home">
             <button>
               <Image src={homeIcon} alt="Home" />
               Home
             </button>
-            </Link>
-          </div>
-          <div className={styles.exploreButton}>
-            <Link href="/explore">
+          </Link>
+        </div>
+        <div className={styles.exploreButton}>
+          <Link href="/explore">
             <button>
               <Image src={exploreIcon} alt="Explore" />
               Explore
             </button>
-            </Link>
-          </div>
-          <div className={styles.notificationsButton}>
-            <Link href="/notifications">
+          </Link>
+        </div>
+        <div className={styles.notificationsButton}>
+          <Link href="/notifications">
             <button>
               <Image src={notificationIcon} alt="Notifications" />
               Notifications
             </button>
-            </Link>
-          </div>
-          <div className={styles.messagesButton}>
-            <Link href="/messages">
+          </Link>
+        </div>
+        <div className={styles.messagesButton}>
+          <Link href="/messages">
             <button>
               <Image src={messageIcon} alt="Messages" />
               Messages
             </button>
-            </Link>
-          </div>
-              
-          <div className={styles.bookmarksButton}>
-            <Link href="/bookmarks">
+          </Link>
+        </div>
+
+        <div className={styles.bookmarksButton}>
+          <Link href="/bookmarks">
             <button>
               <Image src={bookmarkIcon} alt="Bookmarks" />
               Bookmarks
             </button>
-            </Link>
-          </div>
-          <div className={styles.listsButton}>
-            <Link href="/lists">
+          </Link>
+        </div>
+        <div className={styles.listsButton}>
+          <Link href="/lists">
             <button>
               <Image src={listIcon} alt="Lists" />
               Lists
             </button>
-            </Link>
-          </div>
-          <div className={styles.profileButton}>
-            <a href={`/${username}`}>
+          </Link>
+        </div>
+        <div className={styles.profileButton}>
+          <a href={`/profile/${username}`}>
             <button>
               <Image src={profileIcon} alt="Profile" />
               Profile
             </button>
-            </a>
-          </div>
-          <div className={styles.moreButton}>
-            <button>
-              <Image src={moreIcon} alt="More" />
-              More
-            </button>
-          </div>
-          <div className={styles.whoopButton}>
-            <button>Whoop</button>
-          </div>
+          </a>
         </div>
-      </section>
+        <div className={styles.moreButton}>
+          <button>
+            <Image src={moreIcon} alt="More" />
+            More
+          </button>
+        </div>
+        <div className={styles.whoopButton}>
+          <button>Whoop</button>
+        </div>
+      </div>
+    </section>
   );
 }
