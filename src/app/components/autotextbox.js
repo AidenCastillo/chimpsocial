@@ -19,7 +19,7 @@ const AutoHeightTextarea = ({ style = defaultStyle, ...etc }) => {
     }, [currentValue]);
 
     return (
-        <textarea
+        <textarea id="textarea"
             ref={textareaRef}
             style={style}
             {...etc}

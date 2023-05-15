@@ -5,4 +5,16 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+        ]
+      }
+    ]
+  }
+} 

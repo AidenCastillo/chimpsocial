@@ -5,9 +5,11 @@ export function middleware(request: NextRequest) {
   if (new RegExp(/^.*(fonts|_next|vk.com|favicon.ico|api).*$/).test(request.nextUrl.pathname)) {
     return NextResponse.next();
   }
-  // const response = NextResponse.next();
-  // response.cookies.set('username', 'AidenCastillo');
-  // console.log(response.cookies);
+  const response = NextResponse.next();
+  response.cookies.set('username', 'AidenCastillo');
+  response.cookies.set('id', "7mjrmj4qrna0bci");
+  console.log(response.cookies);
+  return response;
 
   // try {
   //   const cookie = request.cookies.get('username');

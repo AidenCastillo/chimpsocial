@@ -9,9 +9,7 @@ export async function GET(request: Request) {
 
   const record = await pb
     .collection("users")
-    .getFirstListItem(`username="${username}"`, {
-      expand: "whoops",
-    });
+    .getFirstListItem(`username="${username}"`);
 
   const data = await record;
 

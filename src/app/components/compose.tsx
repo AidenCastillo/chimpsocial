@@ -13,6 +13,28 @@ import schedule from "../../../public/calendar.svg"
 
 export default function Compose() {
 
+  function handleSubmit() {
+    let data: any;
+    data = document.getElementById("textarea")
+    console.log(data.value)
+
+    // set no-cors
+    
+    fetch('http://127.0.0.1:3000/api/whoops', {
+      method: 'POST',
+      headers: new Headers({
+        // 'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify({content: data.value, author: "test"}),
+      redirect: 'follow'
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      window.location.reload()
+    }
+    )
+  }
 	
 
   return (
@@ -44,7 +66,7 @@ export default function Compose() {
 					</button>
         </div>
 				<div className={styles.submit}>
-					<button>Whoop</button>
+					<button onClick={handleSubmit}>Whoop</button>
 				</div>
       </div>
     </div>
