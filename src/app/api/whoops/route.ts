@@ -20,19 +20,23 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const res = await request.json();
-  let date = new Date()
+  let date = new Date().toISOString().slice(0, 19).replace('T', ' ') + "Z";
+  console.log(date);
+  // date = date.slice(0, 10) + " " + date.slice(11,17) + ".000Z";
 
   try {
     const data = {
       "author": res.author,
       "content": res.content,
-      "timestamp": date.toISOString().slice(0, 19).replace('T', ' ')
+      "timestamp": date
     }
-    console.log(data);
+    console.log("data " + JSON.stringify(data));
     const record = await pb.collection("whoops").create(data);
+    console.log("record " + record);
 
-    return NextResponse.json(data);
+    return NextResponse.json(record);
   } catch(error) {
+    console.log("error " + error);
     return NextResponse.json("error: " + error);
   }
 

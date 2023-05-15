@@ -12,20 +12,21 @@ import emoji from "../../../public/emoji.svg";
 import schedule from "../../../public/calendar.svg"
 
 export default function Compose() {
+  const [id, setId] = useState("");
 
   function handleSubmit() {
     let data: any;
     data = document.getElementById("textarea")
     console.log(data.value)
 
-    // set no-cors
+    
     
     fetch('http://127.0.0.1:3000/api/whoops', {
       method: 'POST',
       headers: new Headers({
         // 'Content-Type': 'application/json',
       }),
-      body: JSON.stringify({content: data.value, author: "test"}),
+      body: JSON.stringify({content: data.value, author: "v3ybki62sobec3j"}),
       redirect: 'follow'
     })
     .then(response => response.json())
@@ -35,6 +36,17 @@ export default function Compose() {
     }
     )
   }
+
+  useEffect(() => {
+    const userId = localStorage.getItem("id");
+    if (userId == undefined) {
+      console.log("error");
+      return;
+    } else {
+      setId(userId);
+    }
+    
+  }, [setId, id])
 	
 
   return (
