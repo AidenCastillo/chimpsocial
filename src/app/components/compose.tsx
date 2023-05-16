@@ -10,6 +10,7 @@ import gif from "../../../public/truck.svg";
 import poll from "../../../public/list.svg";
 import emoji from "../../../public/emoji.svg";
 import schedule from "../../../public/calendar.svg"
+import { getCookie } from "cookies-next";
 
 export default function Compose() {
 
@@ -18,14 +19,14 @@ export default function Compose() {
     data = document.getElementById("textarea")
     console.log(data.value)
 
-    // set no-cors
+    
     
     fetch('http://127.0.0.1:3000/api/whoops', {
       method: 'POST',
       headers: new Headers({
         // 'Content-Type': 'application/json',
       }),
-      body: JSON.stringify({content: data.value, author: "test"}),
+      body: JSON.stringify({content: data.value, author: getCookie("id")}),
       redirect: 'follow'
     })
     .then(response => response.json())
@@ -35,7 +36,6 @@ export default function Compose() {
     }
     )
   }
-	
 
   return (
 		

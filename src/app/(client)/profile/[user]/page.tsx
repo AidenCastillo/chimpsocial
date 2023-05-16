@@ -29,8 +29,8 @@ export default async function Profile({
 }) {
   let res: {user:any, whoops:any} = await getData(params.user);
 
-  const n = res.whoops.length;
-
+  const n = res.whoops.items.length;
+  
   return (
     <div>
       <div className={styles.header}>
