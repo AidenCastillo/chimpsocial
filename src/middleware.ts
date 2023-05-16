@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
   }
   const response = NextResponse.next();
   response.cookies.set('username', 'AidenCastillo');
-  response.cookies.set('id', "7mjrmj4qrna0bci");
+  response.cookies.set('id', "t6ltz12p8fyxrwi");
   console.log(response.cookies);
   return response;
 

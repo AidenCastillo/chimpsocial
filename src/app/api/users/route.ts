@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import Pocketbase from "pocketbase";
-
-const pb = new Pocketbase("http://127.0.0.1:8090");
+import { pb } from "../../../utils/pocketbase.mjs";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

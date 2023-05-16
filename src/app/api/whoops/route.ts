@@ -1,7 +1,5 @@
-import Pocketbase from "pocketbase";
 import { NextResponse } from "next/server";
-
-const pb = new Pocketbase("http://127.0.0.1:8090");
+import { pb } from "../../../utils/pocketbase.mjs";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -10,6 +8,7 @@ export async function GET(request: Request) {
   const record = await pb
     .collection("whoops")
     .getList(1, 50, {
+      sort: "-timestamp",
       filter: `author = "${author}"`})
   
   const data = await record;
