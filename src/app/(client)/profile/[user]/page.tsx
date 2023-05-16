@@ -4,16 +4,18 @@ import PocketBase from "pocketbase";
 import Image from "next/image";
 import logo from "../../../../../public/logo.png";
 import chimpGlitch from "../../../../../public/chimpGlitch.png";
+const HOST_URL = process.env.HOST_URL;
+console.log(HOST_URL);
 
 async function getData(username: string) {
   let user: any;
   let whoops: any;
-  user = await fetch(`http://127.0.0.1:3000/api/users?username=AidenCastillo`, {
+  user = await fetch(`${HOST_URL}/api/users?username=AidenCastillo`, {
     cache: "no-cache",
   });
   user = await user.json();
 
-  whoops = await fetch(`http://127.0.0.1:3000/api/whoops?author=${user.id}`, {
+  whoops = await fetch(`${HOST_URL}/api/whoops?author=${user.id}`, {
     cache: "no-cache",
   });
   whoops = await whoops.json();
@@ -30,7 +32,6 @@ export default async function Profile({
   let res: {user:any, whoops:any} = await getData(params.user);
 
   const n = res.whoops.items.length;
-  
   return (
     <div>
       <div className={styles.header}>

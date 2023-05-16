@@ -11,6 +11,7 @@ import poll from "../../../public/list.svg";
 import emoji from "../../../public/emoji.svg";
 import schedule from "../../../public/calendar.svg"
 import { getCookie } from "cookies-next";
+const HOST_URL = process.env.HOST_URL;
 
 export default function Compose() {
 
@@ -21,7 +22,7 @@ export default function Compose() {
 
     
     
-    fetch('http://127.0.0.1:3000/api/whoops', {
+    fetch(`${HOST_URL}/api/whoops`, {
       method: 'POST',
       headers: new Headers({
         // 'Content-Type': 'application/json',
