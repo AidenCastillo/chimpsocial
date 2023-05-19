@@ -5,6 +5,7 @@ import Image from "next/image";
 import placeholder from "../../../../public/placeholder.jpg";
 
 export default function Home() {
+  
   return (
     <main>
       <div className={styles.header} data-testid={"header"}>

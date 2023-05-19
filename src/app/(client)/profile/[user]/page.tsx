@@ -10,7 +10,7 @@ console.log(HOST_URL);
 async function getData(username: string) {
   let user: any;
   let whoops: any;
-  user = await fetch(`${HOST_URL}/api/users?username=AidenCastillo`, {
+  user = await fetch(`${HOST_URL}/api/users?username=${username}`, {
     cache: "no-cache",
   });
   user = await user.json();
