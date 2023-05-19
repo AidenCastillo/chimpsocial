@@ -31,9 +31,10 @@ export default function Login() {
         username,
         password,
       );
+      
       console.log(pb.authStore.isValid);
-      setCookie('username', pb.authStore.model.username);
-      setCookie('id', pb.authStore.model.id);
+      setCookie('username', pb.authStore.model?.username);
+      setCookie('id', pb.authStore.model?.id);
       window.location.replace(`${HOST_URL}/home`);
     } catch(error) {
       console.log(error);
