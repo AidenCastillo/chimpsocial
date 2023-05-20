@@ -6,9 +6,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
   const response = NextResponse.next();
-  response.cookies.set('username', 'AidenCastillo');
-  response.cookies.set('id', "t6ltz12p8fyxrwi");
-  console.log(response.cookies);
+  // response.cookies.set('username', 'AidenCastillo');
+  // response.cookies.set('id', "t6ltz12p8fyxrwi");
+  // console.log(response.cookies);
   return response;
 
   // try {

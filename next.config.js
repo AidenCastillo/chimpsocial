@@ -19,5 +19,6 @@ module.exports = {
   },
   env: {
     HOST_URL: process.env.HOST_URL,
+    POCKETBASE_URL: process.env.POCKETBASE_URL,
   }
 } 
