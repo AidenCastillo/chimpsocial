@@ -48,7 +48,6 @@ export default function Login() {
         <div className={styles.title}>
           <h1>Log In</h1>
         </div>
-        <button onClick={handleSubmit}>test</button>
         <div className={styles.form}>
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" onChange={e => { setUsername(e.currentTarget.value)}} required />
