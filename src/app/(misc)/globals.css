@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    list-style: none;
+    color: white;
+    font-family: "San Franciso", sans-serif;
+    font-size: 100%;
+    list-style: none;
+}
+
+.column {
+    float: left;
+    width: 100%;
+}
+.left, .right, .center {
+    float:left;
+    /* width: 33%; */
+    height: 100vh;
+    text-align: center;
+}
+.left {
+    width: 33.33%;
+}
+
+.right {
+    width: 66.66%;
+    border-right: 1px solid grey;
+}
+.column:after {
+    clear:both;
+}
+.center {
+    /* width:50%; */
+    /* height: 100vh; */
+    border: 1px grey;
+    border-style: none solid none solid;
+    
+}
+p {
+    color: white;
+}
+body {
+    background-color: black;
+    
+}

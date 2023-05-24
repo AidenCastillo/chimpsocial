@@ -1,0 +1,7 @@
+.wrapper {
+    border: 1px solid;
+    border-color: grey;
+}
+.wrapper:hover {
+    background-color: grey;
+}
