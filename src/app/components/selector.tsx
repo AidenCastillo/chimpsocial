@@ -1,4 +1,4 @@
-import styles from "./selector.module.css"
+import styles from "./css/selector.module.css"
 
 type Props = {
     name: string,
