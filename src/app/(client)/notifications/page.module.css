@@ -1,0 +1,13 @@
+.categories {
+	width: 100%;
+}
+.categories:after {
+	clear: both;
+}
+.All, .Verified, .Mentions {
+	float: left;
+	width: 33.33%;
+}
+.All:hover, .Verified:hover, .Mentions:hover {
+	background-color: grey;
+}
