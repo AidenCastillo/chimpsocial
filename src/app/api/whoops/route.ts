@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     return NextResponse.json(record);
   } catch (error) {
     console.error("[GET] Error retrieving data", error);
-    return NextResponse.json({ error: "Error retrieving data" });
+    return NextResponse.json({ error: `Error retrieving data: ${error}` });
   }
 }
 
