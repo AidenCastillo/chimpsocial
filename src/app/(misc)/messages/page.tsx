@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import settingsIcon from "../../../../public/settings.svg";
 
 import Image from "next/image";
-import Selector from "./selector.tsx";
+import Selector from "../../components/selector.tsx";
 
 export default function Messages() {
   const n = 5;

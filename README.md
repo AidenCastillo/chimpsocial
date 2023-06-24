@@ -3,7 +3,36 @@
 A Twitter clone created using Next.js and Pocketbass
 Visit chimpsocial.vercel.app to see the current main deployment.
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#local">Local</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
+## About The Project
+
+### Built With
+
+* https://nextjs.org/
+  
+
 ## Getting Started
+
+Run the application yourself.
+
+### Local
 
 First, run the development server:
 
@@ -14,6 +43,8 @@ yarn dev
 # or
 pnpm dev
 ```
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

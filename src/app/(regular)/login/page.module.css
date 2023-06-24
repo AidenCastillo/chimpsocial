@@ -3,23 +3,46 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  border: 3px solid green;
 }
 .login_container {
 	text-align: center;
   justify-content: center;
   align-items: center;
   height: 200px;
-  border: 3px solid green;
 }
 .form {
 	display:grid;
+  padding: 10px;
 }
 .form input {
 	color: black;
 }
 .form button {
+  height:25px;
 	margin-top: 10px;
 	border-radius: 20px;
 	background-color: #1d9bf0;
+}
+.login_input {
+  background-color: darkgrey;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+.login_input:focus {
+  outline: none;
+  border: 2px solid #1d9bf0;
+}
+.password_input {
+  background-color: darkgrey;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+.password_input:focus {
+  outline: none;
+  border: 2px solid #1d9bf0;
+}
+
+.register_link {
+  color: #1d9bf0;
+  text-decoration: none;
 }

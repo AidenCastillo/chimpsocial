@@ -1,11 +1,41 @@
+"use client";
+
 import Whoop from "../../components/whoop";
 import Compose from "../../components/compose";
 import styles from "./page.module.css";
 import Image from "next/image";
 import placeholder from "../../../../public/placeholder.jpg";
+import { useState, useEffect } from "react";
+import { pb } from "../../../utils/pocketbase.mjs";
+import { Record } from "pocketbase";
+import { ObjectType } from "typescript";
 
 export default function Home() {
-  
+  const [whoops, setWhoops] = useState<Record[]>([]);
+
+
+  useEffect(() => {
+    async function getFollowingWhoops() {
+      const fetchedWhoops = [];
+      const following = pb.authStore.model?.following;
+      for (let i = 0; i < following.length; i++) {
+        let res = await pb.collection("whoops").getList(1, 50, {
+          filter: `author = "${following[i]}"`,
+          expand: "author"
+        });
+        fetchedWhoops.push(...res.items);
+      }
+      setWhoops(fetchedWhoops);
+    }
+    //sleep for 1 second
+    setTimeout(() => {
+
+    }, 1000);
+    getFollowingWhoops();
+    console.log(whoops);
+  }, [])
+
+
   return (
     <main>
       <div className={styles.header} data-testid={"header"}>
@@ -23,12 +53,16 @@ export default function Home() {
         <div className={styles.composing} data-testid={"composing"}></div>
       </div>
       <Compose />
-      <Whoop name="Chimp" username="chimpgamer" content="hello world" />
-      <Whoop
-        name="Tyler"
-        username="bigweenie"
-        content="You tried to scare me by getting in my face, then you shoved a pole at me like a little bitch. I asked if you were threatening me because of how pathetic you looked. There's a reason your cameraman panned away"
-      />
+      {[...Array(whoops.length)].map((e, i) => (
+          <Whoop
+            /* tslint:disable */
+            name={whoops[i]["expand" as keyof ObjectType]["author"]["name"]}
+            username={whoops[i]["expand" as keyof ObjectType]["author"]["username"]}
+            content={whoops[i]["content"]}
+            key={i}
+            /* tslint:enable */
+          />
+        ))}
     </main>
   );
 }
