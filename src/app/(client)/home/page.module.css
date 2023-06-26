@@ -12,6 +12,9 @@
   width: 50%;
   text-align: center;
 }
+.Following {
+	background-color: grey;
+}
 .ForYou:hover, .Following:hover {
 	background-color: grey;
 }

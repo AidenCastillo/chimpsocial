@@ -4,6 +4,7 @@ import PocketBase from "pocketbase";
 import Image from "next/image";
 import logo from "../../../../../public/logo.png";
 import chimpGlitch from "../../../../../public/chimpGlitch.png";
+import Link from "next/link";
 const HOST_URL = process.env.HOST_URL;
 console.log(HOST_URL);
 
@@ -30,7 +31,7 @@ export default async function Profile({
   params: { user: string };
 }) {
   let res: {user:any, whoops:any} = await getData(params.user);
-
+  const following = `${res.user.following.length} Following`;
   const n = res.whoops.items.length;
   return (
     <div>
@@ -45,8 +46,14 @@ export default async function Profile({
         <h1>{res.user.name}</h1>
         <p>@{res.user.username}</p>
         <p>{res.user.bio}</p>
-
+        <a className={styles.ref}href={`/profile/${res.user.username}/following`}>
+          <p>{following}</p>
+        </a>
+        <a className={styles.ref}href={`/profile/${res.user.username}/followers`}>
+          <p>{res.user.followers.length} Followers</p>
+        </a>
       </div>
+
         {[...Array(n)].map((e, i) => (
           <Whoop
             name={res.user.name}

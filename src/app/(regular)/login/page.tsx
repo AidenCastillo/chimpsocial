@@ -44,6 +44,12 @@ export default function Login() {
     }
   }
 
+  const handleKeyDown = (e: { key: string; }) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  }
+
   return (
     <main className={styles.main}>
       {/* <div className={styles.logo}>
@@ -57,7 +63,7 @@ export default function Login() {
           <label htmlFor="username">Username</label>
           <input className={styles.login_input} type="text" id="username" name="username" onChange={e => { setUsername(e.currentTarget.value)}} required />
           <label htmlFor="password">Password</label>
-          <input className={styles.password_input} type="text" id="password" name="password" onChange={e => { setPassword(e.currentTarget.value)}} required />
+          <input onKeyDown={handleKeyDown} className={styles.password_input} type="text" id="password" name="password" onChange={e => { setPassword(e.currentTarget.value)}} required />
           <button onClick={handleSubmit}>Submit</button>
         </div>
         <div>
